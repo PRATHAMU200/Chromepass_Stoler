@@ -110,8 +110,8 @@ main()
     server = smtplib.SMTP("smtp.gmail.com", 587)
     server.ehlo()
     server.starttls()
-    server.login('pratham.blogspot@gmail.com', 'Pratap@1t')
-    server.sendmail("pratham.blogspot@gmail.com", to, content)
+    server.login('abc@example.com', 'password@123')
+    server.sendmail("abc@example.com", to, content)
     server.close()
 
 f=open("sampel.txt","w")
@@ -120,7 +120,7 @@ f.close()
 try:
     
     content = a
-    to = "pratham.blogspot@gmail.com"
+    to = "abc@example.com"
     sendEmail(to, a[:10])
     print('email has been sent')
     
@@ -134,8 +134,8 @@ from email.mime.text import MIMEText
 import smtplib
 
 
-fromaddr = "pratham.blogspot@gmail.com"
-toaddr = "pratham.blogspot@gmail.com"
+fromaddr = "abc@example.com"
+toaddr = "abc@example.com"
 
 msg = MIMEMultipart()
 
@@ -148,7 +148,7 @@ msg.attach(MIMEText(body, 'plain'))
 
 server = smtplib.SMTP('smtp.gmail.com', 587)
 server.starttls()
-server.login('pratham.blogspot@gmail.com', 'Pratap@1t')
+server.login('abc@example.com', 'password@123')
 text = msg.as_string()
 server.sendmail(fromaddr, toaddr, text)
 server.quit()
